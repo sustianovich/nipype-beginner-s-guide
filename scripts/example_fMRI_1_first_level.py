@@ -46,7 +46,7 @@ despike = MapNode(Despike(outputtype='NIFTI'),
                   name="despike", iterfield=['in_file'])
 
 # Slicetiming - correct for slice wise acquisition
-interleaved_order = range(1,number_of_slices+1,2) + range(2,number_of_slices+1,2)
+interleaved_order = list(range(1, number_of_slices + 1, 2)) + list(range(2, number_of_slices + 1, 2))
 sliceTiming = Node(SliceTiming(num_slices=number_of_slices,
                                time_repetition=TR,
                                time_acquisition=TR-TR/number_of_slices,
